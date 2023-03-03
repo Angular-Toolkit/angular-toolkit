@@ -1,4 +1,7 @@
-# AngularToolkit
+[![Check Inclusive Language](https://github.com/majies/angular-toolkit/actions/workflows/inclusive-language.yml/badge.svg?branch=main)](https://github.com/majies/angular-toolkit/actions/workflows/inclusive-language.yml)
+[![Code Scanning](https://github.com/majies/angular-toolkit/actions/workflows/codeql.yml/badge.svg)](https://github.com/majies/angular-toolkit/actions/workflows/codeql.yml)
+[![Test](https://github.com/majies/angular-toolkit/actions/workflows/test.yml/badge.svg)](https://github.com/majies/angular-toolkit/actions/workflows/test.yml)
+[![Build](https://github.com/majies/angular-toolkit/actions/workflows/build.yml/badge.svg)](https://github.com/majies/angular-toolkit/actions/workflows/build.yml)
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 

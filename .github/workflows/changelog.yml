@@ -1,0 +1,43 @@
+name: Changes
+on: [pull_request]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+env:
+  CYPRESS_INSTALL_BINARY: 0
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Get First Commit
+        run: echo "FIRST_COMMIT=$(git merge-base remotes/origin/main --octopus)" >> $GITHUB_ENV
+
+      - name: Generate changelog
+        id: CHANGELOG
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx auto changelog --no-git-commit --from=${{ env.FIRST_COMMIT }} --name
+
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          filePath: ./CHANGELOG.md
+          comment_tag: changelog
+          reactions: eyes
+
