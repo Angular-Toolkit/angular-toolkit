@@ -1,0 +1,15 @@
+.supercharge {
+  animation: VariableFontWeight 500ms 7 alternate ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 500ms;
+  font-weight: var(--font-weight-bold);
+}
+
+@keyframes VariableFontWeight {
+  0% {
+    font-weight: var(--font-weight-bold);
+  }
+  100% {
+    font-weight: var(--font-weight-light);
+  }
+}

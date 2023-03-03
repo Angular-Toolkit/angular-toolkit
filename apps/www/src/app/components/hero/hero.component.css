@@ -1,0 +1,59 @@
+:host(.hero) {
+  --_hero-bg-color: var(--color-plum-light);
+  --_hero-alt-bg-color: var(--color-ocean);
+  display: grid;
+  width: 100%;
+  grid-template-areas:
+    "body"
+    "foot";
+}
+
+.hero__body {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  background-color: var(--_hero-bg-color);
+  grid-area: body;
+  padding-top: 20px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero__footer {
+  grid-area: foot;
+  height: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__footer-layer {
+  width: 5000px;
+  height: 300px;
+  position: absolute;
+  box-shadow: 12px 0 12px rgba(0 0 0 / 50%);
+}
+
+.hero__footer-layer--top {
+  bottom: 50px;
+  rotate: 3deg;
+  background-color: var(--_hero-bg-color);
+  translate: -50% 0;
+  left: 50%;
+  z-index: 1;
+}
+
+.hero__footer-layer--bottom {
+  width: 2000px;
+  left: -20px;
+  bottom: 50px;
+  rotate: -2deg;
+  background-color: var(--_hero-alt-bg-color);
+  z-index: 0;
+}
+
+@media (min-width: 48em) {
+  .hero__body{
+    padding: 0;
+  }
+}

@@ -1,0 +1,54 @@
+:host(.type) {
+  --_type-weight: var(--type-paragraph-font-weight);
+  --_type-line-height: var(--type-paragraph-line-height);
+  --_type-font-size: var(--type-paragraph-font-size);
+  --_type-margin-bottom: 0;
+  --_type-color: var(--color-text);
+
+  color: var(--_type-color);
+  font-family: var(--font-family);
+  font-weight: var(--_type-weight);
+  line-height: var(--_type-line-height);
+  font-size: var(--_type-font-size);
+  margin-bottom: var(--_type-margin-bottom);
+}
+
+:host(.type--title) {
+  --_type-color: var(--color-heading);
+  --_type-font-size: var(--type-heading-title-font-size);
+  --_type-weight: var(--type-heading-title-font-weight);
+  --_type-line-height: var(--type-heading-title-line-height);
+}
+
+:host(.type--heading-1) {
+  --_type-color: var(--color-heading);
+  --_type-font-size: var(--type-heading-1-font-size);
+  --_type-weight: var(--type-heading-1-font-weight);
+  --_type-line-height: var(--type-heading-1-line-height);
+}
+
+:host(.type--heading-2) {
+  --_type-color: var(--color-heading);
+  --_type-font-size: var(--type-heading-2-font-size);
+  --_type-weight: var(--type-heading-2-font-weight);
+  --_type-line-height: var(--type-heading-2-line-height);
+}
+
+:host(.type--lead) {
+  --_type-font-size: var(--type-lead-font-size);
+  --_type-weight: var(--type-lead-font-weight);
+  --_type-line-height: var(--type-lead-line-height);
+}
+
+:host(.type--margin-bottom) {
+  --_type-margin-bottom: var(--type-spacing-paragraph);
+}
+
+:host(.type--color-invert) {
+  --_type-color: var(--color-invert);
+}
+
+:host(.type--color-white) {
+  --_type-color: var(--color-white);
+}
+

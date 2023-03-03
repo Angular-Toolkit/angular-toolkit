@@ -1,0 +1,52 @@
+<app-container wide>
+  <nav class="masthead__body">
+    <ul class="masthead__links">
+      <li class="masthead__links-item">
+        <a href="#" class="masthead__link">Docs</a>
+      </li>
+      <li class="masthead__links-item">
+        <a href="#" class="masthead__link">Blog</a>
+      </li>
+      <li class="masthead__links-item">
+        <a href="#" class="masthead__link">Feature Request</a>
+      </li>
+      <li class="masthead__links-item">
+        <a href="#" class="masthead__link">Issues</a>
+      </li>
+    </ul>
+
+    <aside class="masthead__utility">
+      <button class="masthead__button" (click)="toggleExpanded()">
+        <app-icon name="menu"/>
+      </button>
+
+      <app-segmented-control aria-label="Set Colour Scheme">
+
+        <button app-segmented-control-button
+                title="Light"
+                name="mode"
+                [value]="ColorMode.LIGHT"
+                [formControl]="mode">
+          <app-icon name="sun"/>
+        </button>
+
+        <button app-segmented-control-button
+                title="System"
+                name="mode"
+                [value]="ColorMode.AUTO"
+                [formControl]="mode">
+          <app-icon name="sync"/>
+        </button>
+
+        <button app-segmented-control-button
+                title="Dark"
+                name="mode"
+                [value]="ColorMode.DARK"
+                [formControl]="mode">
+          <app-icon name="moon"/>
+        </button>
+
+      </app-segmented-control>
+    </aside>
+  </nav>
+</app-container>

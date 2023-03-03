@@ -1,3 +1,10 @@
-import { Route } from '@angular/router';
+import {Route, Routes} from '@angular/router';
 
-export const appRoutes: Route[] = [];
+const home: Route = {
+  path: '',
+  loadComponent: () => import('./pages/home').then(mod => mod.HomePageComponent),
+}
+
+export const appRoutes: Routes = [
+  home,
+];

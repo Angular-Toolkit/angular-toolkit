@@ -1,1 +1,102 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~modern-css-reset";
+
+@font-face {
+  font-family: "Kyiv Type";
+  src: url('/assets/kyiv-type/kyiv-type-titling.ttf') format("truetype-variations");
+  font-weight: 1 1000;
+}
+
+:root {
+  --font-family: "Kyiv Type";
+  --color-plum: #4B3B53;
+  --color-plum-light: #634F6C;
+  --color-lilac: #F6EDFA;
+  --color-lilac-dark: #94809D;
+  --color-ocean: #55A1FA;
+  --color-black: #2A262F;
+  --color-white: #FFF;
+
+  --font-weight-bold: 600;
+  --font-weight-medium: 450;
+  --font-weight-regular: 300;
+  --font-weight-light: 100;
+
+  --type-heading-title-font-size: 2rem;
+  --type-heading-title-font-weight: var(--font-weight-bold);
+  --type-heading-title-line-height: 1.2em;
+
+  --type-heading-1-font-size: 1.5rem;
+  --type-heading-1-font-weight: var(--font-weight-bold);
+  --type-heading-1-line-height: 1.2em;
+
+  --type-heading-2-font-size: 1.2rem;
+  --type-heading-2-font-weight: var(--font-weight-bold);
+  --type-heading-2-line-height: 1.4em;
+
+  --type-lead-font-size: 1.2rem;
+  --type-lead-font-weight: var(--font-weight-medium);
+  --type-lead-line-height: 1.5em;
+
+  --type-paragraph-font-size: 1rem;
+  --type-paragraph-font-weight: var(--font-weight-regular);
+  --type-paragraph-line-height: 1.7em;
+
+  --type-spacing-paragraph: 0.75rem;
+
+  --grid-gutter: 16px;
+  --grid-max-width: 1080px;
+  --grid-wide-max-width: 1280px;
+
+}
+
+@media (min-width: 48em) {
+  :root {
+    --type-heading-title-font-size: 3.75rem;
+    --type-heading-1-font-size: 2.5rem;
+    --type-heading-2-font-size: 2rem;
+    --type-lead-font-size: 1.25rem;
+    --type-paragraph-font-size: 1rem;
+    --type-spacing-paragraph: 1rem;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-background: var(--color-lilac);
+    --color-heading: var(--color-black);
+    --color-text: var(--color-plum);
+    --color-invert: var(--color-white);
+    --color-surface: var(--color-plum-light);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--color-plum);
+    --color-heading: var(--color-white);
+    --color-text: var(--color-lilac);
+    --color-invert: var(--color-black);
+    --color-surface: var(--color-lilac);
+  }
+}
+
+.light {
+  --color-background: var(--color-lilac);
+  --color-heading: var(--color-black);
+  --color-text: var(--color-plum);
+  --color-invert: var(--color-white);
+  --color-surface: var(--color-plum-light);
+}
+
+.dark {
+  --color-background: var(--color-plum);
+  --color-heading: var(--color-white);
+  --color-text: var(--color-lilac);
+  --color-invert: var(--color-black);
+  --color-surface: var(--color-lilac);
+}
+
+body {
+  background-color: var(--color-background);
+}
