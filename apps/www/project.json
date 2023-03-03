@@ -1,24 +1,21 @@
 {
-  "name": "toolkit-demos",
+  "name": "www",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/toolkit-demos/src",
-  "prefix": "angular-toolkit",
+  "sourceRoot": "apps/www/src",
+  "prefix": "app",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/toolkit-demos",
-        "index": "apps/toolkit-demos/src/index.html",
-        "main": "apps/toolkit-demos/src/main.ts",
+        "outputPath": "dist/apps/www",
+        "index": "apps/www/src/index.html",
+        "main": "apps/www/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/toolkit-demos/tsconfig.app.json",
-        "assets": [
-          "apps/toolkit-demos/src/favicon.ico",
-          "apps/toolkit-demos/src/assets"
-        ],
-        "styles": ["apps/toolkit-demos/src/styles.css"],
+        "tsConfig": "apps/www/tsconfig.app.json",
+        "assets": ["apps/www/src/favicon.ico", "apps/www/src/assets"],
+        "styles": ["apps/www/src/styles.css"],
         "scripts": []
       },
       "configurations": {
@@ -52,10 +49,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "toolkit-demos:build:production"
+          "browserTarget": "www:build:production"
         },
         "development": {
-          "browserTarget": "toolkit-demos:build:development"
+          "browserTarget": "www:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -63,24 +60,21 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "toolkit-demos:build"
+        "browserTarget": "www:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "apps/toolkit-demos/**/*.ts",
-          "apps/toolkit-demos/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/www/**/*.ts", "apps/www/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/toolkit-demos/jest.config.ts",
+        "jestConfig": "apps/www/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
