@@ -1,0 +1,43 @@
+name: Test
+on: [push]
+
+env:
+  CYPRESS_INSTALL_BINARY: 0
+
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Track Main Branch
+        if: github.ref != 'refs/heads/main'
+        run: git branch --track main origin/main
+
+      - name: Lint Affected
+        if: github.ref != 'refs/heads/main'
+        run: yarn affected --target=lint
+
+      - name: Test Affected
+        if: github.ref != 'refs/heads/main'
+        run: yarn affected --target=test
+
+      - name: Lint All
+        if: github.ref == 'refs/heads/main'
+        run: yarn run-many --target=lint
+
+      - name: Test All
+        if: github.ref == 'refs/heads/main'
+        run: yarn run-many --target=test
