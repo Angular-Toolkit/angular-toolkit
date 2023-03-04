@@ -35,7 +35,7 @@ export class ColorModeService {
 
   private setAuto() {
     this._mode.next(ColourMode.AUTO);
-    this.storage.clear();
+    this.storage.removeItem();
     this.document.body.classList?.remove(ColourMode.LIGHT);
     this.document.body.classList?.remove(ColourMode.DARK);
   }

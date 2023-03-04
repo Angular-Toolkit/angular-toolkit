@@ -19,7 +19,7 @@ export class KeyStorage<T = unknown> {
     this._store.setItem(this._key, data);
   }
 
-  clear(): void {
+  removeItem(): void {
     this._store.removeItem(this._key);
   }
 

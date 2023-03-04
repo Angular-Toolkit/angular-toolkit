@@ -1,7 +1,7 @@
 import {Directive, Input, OnDestroy, OnInit} from "@angular/core";
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 import {noop} from "rxjs";
-import {RadioControlRegistry} from ".";
+import {RadioControlRegistry} from "./index";
 
 
 @Directive({

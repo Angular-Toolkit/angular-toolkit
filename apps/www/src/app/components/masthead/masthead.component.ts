@@ -2,7 +2,7 @@ import {Component, HostBinding, OnDestroy, OnInit} from "@angular/core";
 import {FormControl, ReactiveFormsModule} from "@angular/forms";
 import {Subscription} from "rxjs";
 import {SegmentedControlButtonComponent, SegmentedControlComponent} from "../segmented-control";
-import {RadioValueAccessorDirective} from "../../library-components/directives";
+import {RadioValueAccessorDirective} from "../../library-components/directives/radio-control-accessor";
 import {ColorModeService, ColourMode} from "../../library-components/services";
 import {ContainerComponent} from "../container";
 import {IconComponent} from "../icon";

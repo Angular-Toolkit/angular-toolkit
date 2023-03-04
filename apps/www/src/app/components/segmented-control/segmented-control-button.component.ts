@@ -1,5 +1,5 @@
 import {Component, ElementRef, HostBinding, HostListener, Input} from "@angular/core";
-import {RadioValueAccessorDirective} from "../../library-components/directives";
+import {RadioValueAccessorDirective} from "../../library-components/directives/radio-control-accessor";
 import {FocusableOption, FocusOrigin} from "@angular/cdk/a11y";
 
 @Component({
