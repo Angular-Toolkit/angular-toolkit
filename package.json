@@ -75,11 +75,21 @@
     "typescript": "~4.9.5"
   },
   "packageManager": "yarn@3.4.1",
-  "repository": "majies/angular-toolkit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Angular-Toolkit/angular-toolkit.git"
+  },
   "auto": {
     "plugins": [
       "npm",
-      ["omit-commits", {"subject": ["Merge"]}]
+      [
+        "omit-commits",
+        {
+          "subject": [
+            "Merge"
+          ]
+        }
+      ]
     ],
     "onlyPublishWithReleaseLabel": true
   }
