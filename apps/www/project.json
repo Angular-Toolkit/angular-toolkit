@@ -14,7 +14,15 @@
         "main": "apps/www/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/www/tsconfig.app.json",
-        "assets": ["apps/www/src/favicon.ico", "apps/www/src/assets"],
+        "assets": [
+          "apps/www/src/favicon.ico",
+          "apps/www/src/assets",
+          {
+            "glob": "**/*.svg",
+            "input": "node_modules/@coreui/icons/sprites",
+            "output": "assets/core-ui"
+          }
+        ],
         "styles": ["apps/www/src/styles.css"],
         "scripts": []
       },
