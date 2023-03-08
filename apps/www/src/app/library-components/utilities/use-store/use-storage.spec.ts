@@ -28,7 +28,7 @@ describe('useStore', () => {
   });
 
   it('should configure the key storage to use the localStorage Store', () => {
-    const token = useStore(key, defaultValue, );
+    const token = useStore(key, defaultValue, new LocalStorageStore());
     const store = TestBed.inject(token);
     expect(store['_store']).toBeInstanceOf(LocalStorageStore)
   });
