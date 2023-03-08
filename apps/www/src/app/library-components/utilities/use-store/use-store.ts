@@ -1,15 +1,15 @@
 import {InjectionToken} from "@angular/core";
-import {KeyStorage} from "./key-storage";
+import {KeyStore} from "./key-store";
 import {localStorageStore} from "./stores";
 
-export const createKeyStorage = <T = unknown>(
+export const useStore = <T = unknown>(
   key: string,
   defaultValue: T,
   store: Storage = localStorageStore,
 ) =>
   new InjectionToken(
-    `storage-key-${key}`, {
+    `store-${key}`, {
       providedIn: 'root',
-      factory: () => new KeyStorage<T>(key, defaultValue, store)
+      factory: () => new KeyStore<T>(key, defaultValue, store)
     });
 

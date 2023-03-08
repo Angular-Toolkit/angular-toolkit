@@ -1,4 +1,4 @@
-export class KeyStorage<T = unknown> {
+export class KeyStore<T = unknown> {
 
   constructor(
     private _key: string,
@@ -7,20 +7,16 @@ export class KeyStorage<T = unknown> {
   ) {
   }
 
-  getItem(): T {
+  get value(): T {
     const data = this._store.getItem(this._key);
     return data
       ? JSON.parse(data)
       : this._defaultValue;
   }
 
-  setItem(value: T): void {
+  setValue(value: T): void {
     const data = JSON.stringify(value);
     this._store.setItem(this._key, data);
-  }
-
-  removeItem(): void {
-    this._store.removeItem(this._key);
   }
 
 }
