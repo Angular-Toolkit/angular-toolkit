@@ -1,6 +1,6 @@
-import {Component, DebugElement, HostBinding, HostListener, Input} from "@angular/core";
+import {Component, HostBinding, HostListener, Input} from "@angular/core";
 import {RadioValueAccessorDirective} from "./radio-value-accessor.directive";
-import {CheckboxControlValueAccessor, FormControl, ReactiveFormsModule} from "@angular/forms";
+import {FormControl, ReactiveFormsModule} from "@angular/forms";
 import {fireEvent, render, RenderResult} from "@testing-library/angular";
 
 const selectors = {
